@@ -3,6 +3,7 @@ import Logo from '../../assets/img/logo.png';
 import api from '../../services/api';
 import { FiChevronRight } from 'react-icons/fi';
 import { Title, Form, Repositories } from './styles'
+import {Link} from 'react-router-dom';
 
 interface Repository {
   full_name: string;
@@ -63,7 +64,7 @@ const Dashboard: React.FC = () => {
       <Repositories>
         {repositories.map(repository => (
 
-          <a key={repository.full_name} href="test">
+          <Link key={repository.full_name} to={`repository/${repository.full_name}`}>
             <img src={repository.owner.avatar_url}
               alt={repository.owner.login} />
             <div>
@@ -71,7 +72,7 @@ const Dashboard: React.FC = () => {
               <p>{repository.description}</p>
             </div>
             <FiChevronRight size={20} />
-          </a>
+          </Link>
         ))}
 
       </Repositories>

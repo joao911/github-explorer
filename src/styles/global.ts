@@ -1,5 +1,6 @@
 import {createGlobalStyle} from 'styled-components';
-import git from '../assets/img/git.png';
+import githubBackground from '../assets/img/git.png';
+
 export default createGlobalStyle`
 *{
     margin:0;
@@ -8,7 +9,7 @@ export default createGlobalStyle`
     box-sizing: border-box;
 }
     body{
-        background-color:#F0f0f5 url(${git}) no-repeat 70% top;
+        background: #f0f0f5 url(${githubBackground}) no-repeat 70% top;
         --webkit-font-smoothing: antialiased;
     }
     body, input, button{
